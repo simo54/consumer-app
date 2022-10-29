@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { number } from '../node_modules/node-test-pckg/dist/main';
+import { IStuff } from '../node_modules/node-test-pckg/dist/stuff/stuff';
+import { Class } from '../node_modules/node-test-pckg/dist/main';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const test = number;
+	const anotherTest: IStuff = { first: 'Nice', second: 'Test' };
+	/** This class init */
+	const person = new Class('jake');
+	console.log(test);
+	return (
+		<>
+			<p>
+				{anotherTest.first} {anotherTest.second}, {`${person.name}${test}`}
+			</p>
+		</>
+	);
 }
 
 export default App;
